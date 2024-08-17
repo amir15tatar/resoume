@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>امیرحسین تاتار</title>
+  <!-- Link to Google Fonts for b-yekan Persian font -->
+  
+  <link rel="preconnect" href="//fdn.fontcdn.ir">
+    <link rel="preconnect" href="//v1.fontapi.ir">
+    <link href="https://v1.fontapi.ir/css/Vazir" rel="stylesheet">   
+  <style>
+    /* General Style */
+    body {
+        font-family: Vazir, sans-serif;
+
+    background-color: #1a1a1a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Header with profile picture and personal info */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 30px;
+      position: relative;
+    }
+
+    .header img {
+      width: 150px;
+      height: 200px;
+      border-radius: 80px;
+      object-fit: cover;
+      border: 5px solid #ff6600;
+    }
+
+    .personal-info {
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    .personal-info h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: #ff6600;
+    }
+
+    .personal-info p {
+      font-size: 1.5rem;
+      margin: 5px 0;
+    }
+
+    /* Background decorative elements */
+    .decorative-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .decorative-elements .triangle,
+    .decorative-elements .circle,
+    .decorative-elements .square,
+    .decorative-elements .multiplication {
+      position: absolute;
+      background-color: #ff6600;
+      opacity: 0.5;
+    }
+
+    .decorative-elements .triangle {
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      top: 10%;
+      left: 10%;
+    }
+
+    .decorative-elements .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      top: 40%;
+      right: 10%;
+    }
+
+    .decorative-elements .square {
+      width: 100px;
+      height: 100px;
+      top: 70%;
+      left: 30%;
+    }
+
+    .decorative-elements .multiplication {
+      width: 80px;
+      height: 80px;
+      clip-path: polygon(25% 0, 50% 25%, 75% 0, 100% 25%, 75% 50%, 100% 75%, 75% 100%, 50% 75%, 25% 100%, 0 75%, 25% 50%, 0 25%);
+      bottom: 10%;
+      right: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Skills Section */
+    .skills {
+      margin: 40px 0;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .skills h2 {
+      font-size: 2rem;
+      color: #ff6600;
+      text-align: center;
+    }
+
+    .skills .skill {
+      margin: 20px 0;
+    }
+
+    .skills .skill p {
+      font-size: 1.5rem;
+    }
+
+    .skills .progress-bar {
+      width: 100%;
+      background-color: #444;
+      border-radius: 10px;
+    }
+
+    .skills .progress {
+      background-color: #ff6600;
+      height: 20px;
+      border-radius: 10px;
+    }
+
+    /* Add shapes around skills box */
+    .skills .triangle-shape,
+    .skills .circle-shape,
+    .skills .square-shape,
+    .skills .multiplication-shape {
+      position: absolute;
+      background-color: #ff6600;
+      opacity: 0.5;
+    }
+
+    .skills .triangle-shape {
+      width: 50px;
+      height: 50px;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      top: -25px;
+      left: 10%;
+    }
+
+    .skills .circle-shape {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      bottom: -25px;
+      right: 10%;
+    }
+
+    .skills .square-shape {
+      width: 50px;
+      height: 50px;
+      bottom: -25px;
+      left: 5%;
+    }
+
+    .skills .multiplication-shape {
+      width: 40px;
+      height: 40px;
+      clip-path: polygon(25% 0, 50% 25%, 75% 0, 100% 25%, 75% 50%, 100% 75%, 75% 100%, 50% 75%, 25% 100%, 0 75%, 25% 50%, 0 25%);
+      top: -20px;
+      right: 5%;
+    }
+
+    /* Rank Section */
+    .rank {
+      margin: 40px 0;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .rank h2 {
+      font-size: 2rem;
+      color: #ff6600;
+      text-align: center;
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .rank-item img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .rank-item p {
+      font-size: 1.5rem;
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    /* Add shapes around rank box */
+    .rank .triangle-shape,
+    .rank .circle-shape,
+    .rank .square-shape,
+    .rank .multiplication-shape {
+      position: absolute;
+      background-color: #ff6600;
+      opacity: 0.5;
+    }
+
+    .rank .triangle-shape {
+      width: 50px;
+      height: 50px;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      top: -25px;
+      left: 20%;
+    }
+
+    .rank .circle-shape {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      bottom: -25px;
+      right: 15%;
+    }
+
+    .rank .square-shape {
+      width: 50px;
+      height: 50px;
+      bottom: -25px;
+      left: 10%;
+    }
+
+    .rank .multiplication-shape {
+      width: 40px;
+      height: 40px;
+      clip-path: polygon(25% 0, 50% 25%, 75% 0, 100% 25%, 75% 50%, 100% 75%, 75% 100%, 50% 75%, 25% 100%, 0 75%, 25% 50%, 0 25%);
+      top: -20px;
+      right: 10%;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .personal-info {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      .rank-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .rank-item img {
+        margin-bottom: 20px;
+      }
+
+      .decorative-elements {
+        display: none; /* Hide background elements on small screens */
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><script defer data-domain="amirhosseintatar.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script></head>
+<body>
+
+  <!-- Container for the entire content -->
+  <div class="container">
+
+    <!-- Header Section -->
+    <div class="header">
+      <!-- Profile Picture -->
+      <img style="margin:5px;" src="https://s8.uupload.ir/files/img_20240817_150252_uncm.jpg" alt="Profile Picture">
+
+      <!-- Personal Information -->
+      <div class="personal-info" style="margin-right:20px;">
+        <h1>امیرحسین تاتار</h1>
+        <p>متولد ۸۷</p>
+        <p>۰۹۹۱۶۴۴۳۶۹۸</p>
+        <p>ساکن کرمان - زرند</p>
+      </div>
+
+      <!-- Decorative Elements for Background -->
+      <div class="decorative-elements">
+        <div class="triangle"></div>
+        <div class="circle"></div>
+        <div class="square"></div>
+        <div class="multiplication"></div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <h2>مهارت ها</h2>
+  
+        <!-- Skill Item -->
+        <div class="skill">
+          <p>C#</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 90%;"></div>
+          </div>
+        </div>
+  
+        <div class="skill">
+          <p>Asp.net core</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 80%;"></div>
+          </div>
+        </div>
+
+        
+        <div class="skill">
+            <p>Asp.net MVC</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 75%;"></div>
+            </div>
+        </div>
+
+
+        <div class="skill">
+          <p>JavaScript</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 65%;"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+            <p>Image processing</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 75%;"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <p>Python</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 65%;"></div>
+            </div>
+          </div>
+
+
+          <div class="skill">
+            <p>HTML5</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 70%;"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <p>CSS3</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 60%;"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <p>Arduino</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%;"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <p>SQL Server</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 85%;"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <p>Windowns Form</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%;"></div>
+            </div>
+          </div>
+      </section>
+  
+      <section class="rank">
+        <h2>افتخارات</h2>
+  
+        <div class="rank-item">
+          <a href="https://s8.uupload.ir/files/img_20240619_130036_b68b.jpg"><img src="https://s8.uupload.ir/files/img_20240619_130036_b68b.jpg" alt="Rank Document"></a>
+          <p style="padding: 10px;">حضور در دومین دوره جشنواره اکسیر</p>
+        </div>
+  
+        <div class="rank-item">
+            <a href="https://s8.uupload.ir/files/img_20240619_130148_zpyg.jpg"><img src="https://s8.uupload.ir/files/img_20240619_130148_zpyg.jpg" alt="Rank Document"></a>
+            <p style="padding: 10px;">رتبه اول کشور در محور دست سازه اینترنت اشیا نهمین دوره جشنواره نوجوان خوارزمی </p>
+          </div>
+
+          <div class="rank-item">
+            <a href="https://s8.uupload.ir/files/img_20240619_125911_xd8t.jpg"><img src="https://s8.uupload.ir/files/img_20240619_125911_xd8t.jpg" alt="Rank Document"></a>
+            <p style="padding: 10px;">کسب دیپلم افتخار در بیست و یکمین دوره مسابقات ملی مهارت رشته رباتیک</p>
+          </div>
+
+          <div class="rank-item">
+            <a href="https://s8.uupload.ir/files/img_20240619_145331_5xpj.jpg"><img src="https://s8.uupload.ir/files/img_20240619_145331_5xpj.jpg" alt="Rank Document"></a>
+            <p style="padding: 10px;">کسب عنوان پژوهشگر برتر استان کرمان سال 1402</p>
+          </div>
+  
+      </section>
+  
+    </div>
+  
+  </body>
+  </html>
